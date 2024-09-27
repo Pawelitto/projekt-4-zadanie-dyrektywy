@@ -13,10 +13,8 @@
     </thead>
     <tbody>
       <tr
-        *ngFor="let item of drivers"
-        let
-        pair="even;"
-        [class.pair]="'bg-gray-100'"
+        *ngFor="let item of drivers; let pair = even"
+        [ngClass]="{ 'bg-gray-100': pair, 'bg-white border-b': !pair }"
         class="bg-white border-b"
       >
         <th
